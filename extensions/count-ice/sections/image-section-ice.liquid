@@ -1,0 +1,32 @@
+{% schema %}
+    {
+      "name": "Image Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select an image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Image Section",
+          "category": "Image"
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <div class="image-section" style="text-align: center;">
+      <img
+        src="{{ section.settings.image | file_url }}"
+        alt="{{ section.settings.alt_text }}"
+        style="max-width: 100%; height: auto;"
+      />
+    </div>
+    
